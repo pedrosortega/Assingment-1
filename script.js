@@ -98,3 +98,29 @@ let sum = myReduce(myReduceArr, (acc, num) => {
 })
 
 console.log(sum);
+
+console.log('----------------------------------------------');
+
+function myIncludes(arr,func){
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+}
+
+let myIncludesArray=["apple","orange","pear"];
+
+myIncludes(myIncludesArray,(element)=>{
+    if(element==="apple"){
+        console.log(true);
+        return true;
+    }
+    else{
+        console.log(false);
+        return false;
+    }
+});
