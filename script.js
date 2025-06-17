@@ -182,3 +182,39 @@ let lastindexOf = mylastIndexOf(sports, function (sport) {
 })
 
 console.log(lastindexOf)
+
+
+Object.getKeys = function (obj) {
+    const Objkeys = [];
+    let i = 0;
+
+    for (let key in obj) {
+        if (obj.hasOwnProperty) {
+            Objkeys[i] = key;
+            i++;
+        }
+    }
+    return Objkeys;
+}
+
+const person = {
+    name: "John Doe",
+    age: 21,
+    city: "Bronx"
+}
+
+console.log(Object.getKeys(person))
+
+Object.grabValues = function (obj) {
+    const values = [];
+    let i = 0;
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            values[i] = obj[key];
+            i++;
+        }
+    }
+    return values;
+}
+
+console.log(Object.grabValues(person));
