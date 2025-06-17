@@ -52,11 +52,31 @@ function mySome(arr, func) {
 let mySomeArr = [1, 2, 3, 4, 5];
 
 
-
 mySome(mySomeArr, (element) => {
     if (element % 2 === 0) {
         console.log(true);
         return true;
     }
     return false;
+});
+
+console.log('----------------------------------------------');
+
+function myEvery(arr,func){
+    for (let i = 0; i < arr.length; i++) {
+        if (!func(arr[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let myEveryArr=[2,4,6,8,10];
+myEvery(myEveryArr, (element)=>{
+    if(element%2===0){
+        console.log(true);
+    }
+    else{
+        console.log(false);
+    }
 });
