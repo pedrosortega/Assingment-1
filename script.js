@@ -28,11 +28,35 @@ function myFilter(arr, func) {
     }
 }
 let filterArr = [1, 2, 3, 4, 5];
-let result=[];
+let result = [];
 myFilter(filterArr, (element) => {
-    if(element%2===0){
+    if (element % 2 === 0) {
         result.push(element);
     }
 });
 
 console.log(result);
+
+
+console.log('----------------------------------------------');
+
+function mySome(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+let mySomeArr = [1, 2, 3, 4, 5];
+
+
+
+mySome(mySomeArr, (element) => {
+    if (element % 2 === 0) {
+        console.log(true);
+        return true;
+    }
+    return false;
+});
