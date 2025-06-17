@@ -101,26 +101,46 @@ console.log(sum);
 
 console.log('----------------------------------------------');
 
-function myIncludes(arr,func){
+function myIncludes(arr, func) {
     for (let i = 0; i < arr.length; i++) {
         if (func(arr[i])) {
             return true;
-        }else{
+        } else {
             return false;
         }
-        
+
     }
 }
 
-let myIncludesArray=["apple","orange","pear"];
+let myIncludesArray = ["apple", "orange", "pear"];
 
-myIncludes(myIncludesArray,(element)=>{
-    if(element==="apple"){
+myIncludes(myIncludesArray, (element) => {
+    if (element === "apple") {
         console.log(true);
         return true;
     }
-    else{
+    else {
         console.log(false);
         return false;
     }
 });
+
+console.log('----------------------------------------------');
+
+function myIndexOf(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i], i)) {
+            return i;
+        };
+
+
+    }
+};
+
+const fruits = ['apple', 'banana', 'orange', 'grape'];
+
+let indexOf = myIndexOf(fruits, function (fruit, index) {
+    return fruit === "orange";
+})
+
+console.log(indexOf)
