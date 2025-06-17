@@ -159,3 +159,26 @@ let length = myPush(soda, "Sprite");
 console.log(soda);
 console.log(length);
 
+
+console.log('----------------------------------------------');
+
+
+function mylastIndexOf(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i], i)) {
+            return i;
+        };
+
+    }
+    return - 1;
+};
+
+
+
+const sports = ['Basketball', 'Baseball', 'Tennis', 'Hockey'];
+
+let lastindexOf = mylastIndexOf(sports, function (sport) {
+    return sport === "Baseball";
+})
+
+console.log(lastindexOf)
