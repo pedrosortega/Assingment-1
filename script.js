@@ -62,7 +62,7 @@ mySome(mySomeArr, (element) => {
 
 console.log('----------------------------------------------');
 
-function myEvery(arr,func){
+function myEvery(arr, func) {
     for (let i = 0; i < arr.length; i++) {
         if (!func(arr[i])) {
             return false;
@@ -71,12 +71,30 @@ function myEvery(arr,func){
     return true;
 }
 
-let myEveryArr=[2,4,6,8,10];
-myEvery(myEveryArr, (element)=>{
-    if(element%2===0){
+let myEveryArr = [2, 4, 6, 8, 10];
+myEvery(myEveryArr, (element) => {
+    if (element % 2 === 0) {
         console.log(true);
     }
-    else{
+    else {
         console.log(false);
     }
 });
+
+console.log('----------------------------------------------');
+
+function myReduce(arr, func) {
+    let acc = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        acc = func(acc, arr[i]);
+    }
+    return acc;
+}
+
+let myReduceArr = [1, 2, 3, 4, 5];
+
+let sum = myReduce(myReduceArr, (acc, num) => {
+    return acc + num;
+})
+
+console.log(sum);
