@@ -143,4 +143,19 @@ let indexOf = myIndexOf(fruits, function (fruit, index) {
     return fruit === "orange";
 })
 
-console.log(indexOf)
+console.log(indexOf);
+
+console.log('----------------------------------------------');
+
+function myPush(arr, element) {
+    arr[arr.length] = element;
+    return arr.length;
+}
+
+
+let soda = ["Coca-cola", "Fanta"];
+let length = myPush(soda, "Sprite");
+
+console.log(soda);
+console.log(length);
+
